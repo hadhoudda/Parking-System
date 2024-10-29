@@ -128,12 +128,11 @@ public class FareCalculatorServiceTest {
     }
 
 
-    //@ParameterizedTest(name = "{0} le prix doit être égal à 0")
-    //@ValueSource(longs = { 5, 10, 20,25 })
-   @Test
-    public void calculateFareCarWithLessThan30minutesParkingTimeDescription(){
+    @ParameterizedTest(name = "{0} le prix doit être égal à 0")
+    @ValueSource(longs = { 5, 10, 20,25 })
+    public void calculateFareCarWithLessThan30minutesParkingTimeDescription(long arg){
         Date inTime = new Date();
-        inTime.setTime(System.currentTimeMillis() - (15 * 60 * 1000));
+        inTime.setTime(System.currentTimeMillis() - (arg * 60 * 1000));
         Date outTime = new Date();
         ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.CAR,false);
 
@@ -145,10 +144,11 @@ public class FareCalculatorServiceTest {
 
     }
 
-    @Test
-    public void calculateFareBikeWithLessThan30minutesParkingTimeDescription(){
+    @ParameterizedTest(name = "{0} le prix doit être égal à 0")
+    @ValueSource(longs = { 5, 10, 20,25 })
+    public void calculateFareBikeWithLessThan30minutesParkingTimeDescription(long arg){
         Date inTime = new Date();
-        inTime.setTime(System.currentTimeMillis() - (15* 60 * 1000));
+        inTime.setTime(System.currentTimeMillis() - (arg * 60 * 1000));
         Date outTime = new Date();
         ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.BIKE,false);
 
