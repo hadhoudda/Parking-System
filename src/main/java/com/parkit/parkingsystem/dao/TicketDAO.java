@@ -108,6 +108,7 @@ public class TicketDAO {
 
     /**
      * count how many tickets are recorded for a vehicle
+     *
      * @param vehicleRegNumber
      * @return countTicket
      */
